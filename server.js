@@ -7,5 +7,5 @@ app.listen(PORT, () => {
 });
 
 app.get('/', (request, response) => {
-  response.send('Hello World');
+  response.sendFile(__dirname + '/index.html');
 });
