@@ -1,0 +1,22 @@
+{
+  "name": "crud-app",
+  "version": "1.0.0",
+  "description": "building first CRUD app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brianbud/crud-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brianbud/crud-app/issues"
+  },
+  "homepage": "https://github.com/brianbud/crud-app#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
