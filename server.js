@@ -9,3 +9,7 @@ app.listen(PORT, () => {
 app.get('/', (request, response) => {
   response.sendFile(__dirname + '/index.html');
 });
+
+app.post('/quotes', (request, response) => {
+  console.log('HELLO WORLD TEST FROM CONSOLE!');
+});
