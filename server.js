@@ -2,9 +2,10 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const PORT = 8000;
+const dotenv = require('dotenv');
+dotenv.config();
 const MongoClient = require('mongodb').MongoClient;
-const connectionString =
-  'mongodb+srv://brian:<password>@cluster0.uhkkjle.mongodb.net/?retryWrites=true&w=majority'; //remember to add this in .env and gitignore
+const connectionString = process.env.MONGODB_URI;
 
 app.listen(PORT, () => {
   console.log(`The server is now running on port ${PORT}`);
