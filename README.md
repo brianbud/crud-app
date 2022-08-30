@@ -35,3 +35,15 @@ as well as why developers use `__dirname` which is the current directory you are
 I spent a lot of time trying to debug why things was not working and for future reference, I am writing this as a note to myself to remember to add **Two** underscores in `__dirname`
 
 Until this point, I learnt 1 out of the 4 parts of building a CRUD app. Now I know how Express handles a **GET** Request(**READ** operation).
+
+### Create Post
+
+The C in CRUD is for Create operation and a `<form>` element can be used to send a `POST` request.
+
+In the form element, there is a `method` attribute with the value of `POST` to tell the browser what kind of request to send.
+
+The `action` attribute tells the browser _where_ to send the POST request.
+
+### Express cannot read data
+
+I learnt that Express doesn't handle reading data from the form input and this is where a package like **body-parser** helps.
