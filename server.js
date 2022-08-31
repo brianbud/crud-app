@@ -19,11 +19,17 @@ app.get('/', (request, response) => {
 });
 
 app.post('/quotes', (request, response) => {
-  console.log(request.body);
+  quotesCollection
+    .insertOne(request.body)
+    .then((result) => {
+      console.log(result);
+    })
+    .catch((error) => console.error(error));
 });
 
 MongoClient.connect(connectionString, { useUnifiedTopology: true })
   .then((client) => {
     console.log('Connected to Database');
+    const db = client.db('star-wars-quotes');
   })
   .catch((error) => console.error(error));
