@@ -54,8 +54,24 @@ body-parse helps with tidying up the `request` object before we use them with th
 
 On my 1st day learning how to use a database called MongoDB, I had to use a "ConnectionString" to connect the database to my app, the connectionString involves a username and password.
 
+![email warning from gitguardian regarding secret leak](./screenshots/gitguardian.png)
+
 When I pushed my changes to Github, I got an email from GitGuardian regarding a security threat that they scanned and found out that my connectionString username and password was public. This mistake made me learn 2 things:
 
 1. How to revert a pushed commit in git using `git reset Head~1` to unstage your latest commit and `git push -f origin main` to force change this.
 
 2. I learnt about environment variables. You can use .gitignore which tells Git what files to ignore when committing your project to Github, it is common to add your node_module. In addition to node_module, apparently you can also create a .env file with your passwords and add .env to your .gitignore.
+
+![vs code with .gitignore and .env file inside it](./screenshots/gitignore.png)
+
+### DB, Collections, Documents
+
+I learnt that naming my db is as easy as `const db = client.db('database-name')`
+
+All the express handles requests should be **inside** MongoClient's `then` call.
+
+I also learnt that `collections` are like storage boxes if a Database is a room.
+
+I learnt that `insertOne` method is used to **add** items into a collection and each entry is called a `document`
+
+![documents input in form](./screenshots/document%20in%20db.png)
