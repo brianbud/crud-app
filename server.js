@@ -27,6 +27,7 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
       quotesCollection
         .insertOne(request.body)
         .then((result) => {
+          response.redirect('/');
           console.log(result);
         })
         .catch((error) => console.error(error));
