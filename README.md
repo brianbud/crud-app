@@ -47,3 +47,15 @@ The `action` attribute tells the browser _where_ to send the POST request.
 ### Express cannot read data
 
 I learnt that Express doesn't handle reading data from the form input and this is where a package like **body-parser** helps.
+
+body-parse helps with tidying up the `request` object before we use them with the `use` method.
+
+## Learning opportunity with Mongodb
+
+On my 1st day learning how to use a database called MongoDB, I had to use a "ConnectionString" to connect the database to my app, the connectionString involves a username and password.
+
+When I pushed my changes to Github, I got an email from GitGuardian regarding a security threat that they scanned and found out that my connectionString username and password was public. This mistake made me learn 2 things:
+
+1. How to revert a pushed commit in git using `git reset Head~1` to unstage your latest commit and `git push -f origin main` to force change this.
+
+2. I learnt about environment variables. You can use .gitignore which tells Git what files to ignore when committing your project to Github, it is common to add your node_module. In addition to node_module, apparently you can also create a .env file with your passwords and add .env to your .gitignore.
