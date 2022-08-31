@@ -11,6 +11,7 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
   .then((client) => {
     console.log('Connected to Database');
     const db = client.db('star-wars-quotes');
+    const quotesCollection = db.collection('quotes');
     app.listen(PORT, () => {
       console.log(`The server is now running on port ${PORT}`);
     });
