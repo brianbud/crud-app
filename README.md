@@ -75,3 +75,11 @@ I also learnt that `collections` are like storage boxes if a Database is a room.
 I learnt that `insertOne` method is used to **add** items into a collection and each entry is called a `document`
 
 ![documents input in form](./screenshots/document%20in%20db.png)
+
+## Getting quotes
+
+The `.find()` method can be added to the `db.collection('quotes')` that returns a `cursor` object
+
+in addition to find `.toArray` method can convert the data into array.
+
+`const cursor = db.collection('quotes').find().toArray();`
