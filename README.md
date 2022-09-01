@@ -76,10 +76,36 @@ I learnt that `insertOne` method is used to **add** items into a collection and 
 
 ![documents input in form](./screenshots/document%20in%20db.png)
 
-## Getting quotes
+### Getting quotes
 
 The `.find()` method can be added to the `db.collection('quotes')` that returns a `cursor` object
 
 in addition to find `.toArray` method can convert the data into array.
 
 `const cursor = db.collection('quotes').find().toArray();`
+
+#### Problem with Promise
+
+When trying to return the `cursor` results, it returns `Promise{<pending>}`
+
+`find()` method is asynchronous, that's why the promise is pending since it's still fetching.
+
+To solve this, I add a `.then()` method to deal with this.
+
+Changed from this:
+
+```
+      const cursor = db.collection('quotes').find().toArray()
+      console.log(cursor);
+```
+
+to this:
+
+```db.collection('quotes')
+        .find()
+        .toArray()
+        .then((results) => {
+          console.log(results);
+        })
+        .catch((error) => console.error(error));
+```

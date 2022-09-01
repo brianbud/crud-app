@@ -20,8 +20,13 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
 
     //All handlers here
     app.get('/', (request, response) => {
-      const cursor = db.collection('quotes').find().toArray();
-      console.log(cursor);
+      db.collection('quotes')
+        .find()
+        .toArray()
+        .then((results) => {
+          console.log(results);
+        })
+        .catch((error) => console.error(error));
       response.sendFile(__dirname + '/index.html');
     });
 
