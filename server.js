@@ -9,6 +9,8 @@ const connectionString = process.env.MONGODB_URI;
 
 app.set('view engine', 'ejs');
 
+res.render(view, locals);
+
 MongoClient.connect(connectionString, { useUnifiedTopology: true })
   .then((client) => {
     console.log('Connected to Database');
