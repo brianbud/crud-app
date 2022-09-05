@@ -109,3 +109,7 @@ to this:
         })
         .catch((error) => console.error(error));
 ```
+
+### EJS
+
+To render the HTML, I usea tempalte engine called **Embedded JavaScript(EJS)**
