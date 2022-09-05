@@ -112,4 +112,4 @@ to this:
 
 ### EJS
 
-To render the HTML, I usea tempalte engine called **Embedded JavaScript(EJS)**
+To render the HTML, I used a template engine called **Embedded JavaScript(EJS)**

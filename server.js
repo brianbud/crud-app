@@ -25,11 +25,9 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
         .find()
         .toArray()
         .then((results) => {
-          console.log(results);
+          response.render('index.ejs', { quotes: results });
         })
         .catch((error) => console.error(error));
-      response.sendFile(__dirname + '/index.html');
-      response.render('index.ejs', {});
     });
 
     app.post('/quotes', (request, response) => {
