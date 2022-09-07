@@ -113,3 +113,9 @@ to this:
 ### EJS
 
 To render the HTML, I used a template engine called **Embedded JavaScript(EJS)**
+
+To tell Express that I am using EJS, I use the `app.set('view engine', 'ejs')`
+
+And to render the HTML, I created a folder called `views` with `index.ejs` in it.
+
+Since the `result` is a JavaScript object, I used a `for loop` using EJS to display the quotes.
