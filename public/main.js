@@ -4,5 +4,9 @@ update.addEventListener('click', (_) => {
   fetch('/quotes', {
     method: 'put',
     headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      name: 'Test Name',
+      quote: 'This is from main.js',
+    }),
   });
 });

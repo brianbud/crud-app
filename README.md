@@ -127,3 +127,20 @@ This is the part learning about the U in CRUD which is the Update Operation usin
 I learnt that according to Express conventions, developers use a `public` folder to make it accessible to the public by using a built-in middleware called `express.static`
 
 After adding an eventListener to the update button, I use the Fetch API to trigger a PUT request.
+
+Using the Fetch API on the update button, I need to specify the method, specify the server that we are sending JSON data and to convert that data we send into JSON.
+
+```
+const update = document.querySelector('#update-button');
+
+update.addEventListener('click', (_) => {
+  fetch('/quotes', {
+    method: 'put',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      name: 'Test Name',
+      quote: 'This is from main.js',
+    }),
+  });
+});
+```
