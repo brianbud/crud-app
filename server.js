@@ -18,7 +18,7 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
     app.set('view engine', 'ejs');
     // be sure to place body-parser BEFORE your CRUD handlers
     app.use(bodyParser.urlencoded({ extended: true }));
-
+    app.use(express.static('public'));
     //All handlers here
     app.get('/', (request, response) => {
       db.collection('quotes')

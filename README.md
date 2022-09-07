@@ -120,6 +120,8 @@ And to render the HTML, I created a folder called `views` with `index.ejs` in it
 
 Since the `result` is a JavaScript object, I used a `for loop` using EJS to display the quotes.
 
-### How to edit
+### How to UPDATE
 
 This is the part learning about the U in CRUD which is the Update Operation using a **PUT** request
+
+I learnt that according to Express conventions, developers use a `public` folder to make it accessible to the public by using a built-in middleware called `express.static`
