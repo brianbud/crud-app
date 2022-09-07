@@ -119,3 +119,7 @@ To tell Express that I am using EJS, I use the `app.set('view engine', 'ejs')`
 And to render the HTML, I created a folder called `views` with `index.ejs` in it.
 
 Since the `result` is a JavaScript object, I used a `for loop` using EJS to display the quotes.
+
+### How to edit
+
+This is the part learning about the U in CRUD which is the Update Operation using a **PUT** request

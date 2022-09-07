@@ -17,10 +17,16 @@
     <ul class="quotes">
       <% for(let i = 0; i< quotes.length; i++){ %>
       <li class="quotes">
-        <span><%= quotes[i].name %></span>
+        <span><%= quotes[i].name %></span>:
         <span><%= quotes[i].quote %></span>
       </li>
       <%} %>
     </ul>
+
+    <div>
+      <h2>Heading 2</h2>
+      <p>Replace first quote with another</p>
+      <button id="update-button">Update quote</button>
+    </div>
   </body>
 </html>
