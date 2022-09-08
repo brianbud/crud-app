@@ -34,7 +34,7 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
     app.put('/quotes', (req, res) => {
       quotesCollection
         .findOneAndUpdate(
-          { name: 'Bri' },
+          { name: 'Brian' },
           {
             $set: {
               name: req.body.name,
@@ -46,7 +46,7 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
           }
         )
         .then((result) => {
-          console.log(result);
+          res.json('Success');
         })
         .catch((error) => console.error(error));
     });

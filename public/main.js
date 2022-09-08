@@ -8,5 +8,11 @@ update.addEventListener('click', (_) => {
       name: 'Test Name',
       quote: 'This is from main.js',
     }),
-  });
+  })
+    .then((response) => {
+      if (response.ok) return response.json();
+    })
+    .then((response) => {
+      console.log(response);
+    });
 });
