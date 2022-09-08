@@ -7,8 +7,8 @@ dotenv.config();
 const MongoClient = require('mongodb').MongoClient;
 const connectionString = process.env.MONGODB_URI;
 
-MongoClient.connect(connectionString, { useUnifiedTopology: true })
-  .then((client) => {
+MongoClient.connect(connectionString, { useUnifiedTopology: true }).then(
+  (client) => {
     console.log('Connected to Database');
     const db = client.db('star-wars-quotes');
     const quotesCollection = db.collection('quotes');
@@ -59,5 +59,13 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
         })
         .catch((error) => console.error(error));
     });
-  })
-  .catch((error) => console.error(error));
+    app.delete('/quotes', (req, res) => {
+      quotesCollection
+        .deleteOne({ name: req.body.name })
+        .then((result) => {
+          res.json(`Deleted Darth Vader's quote`);
+        })
+        .catch((error) => console.error(error));
+    });
+  }
+);
