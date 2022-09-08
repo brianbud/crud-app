@@ -13,6 +13,6 @@ update.addEventListener('click', (_) => {
       if (response.ok) return response.json();
     })
     .then((response) => {
-      console.log(response);
+      window.location.reload(true);
     });
 });
