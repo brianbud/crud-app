@@ -19,6 +19,7 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
     // be sure to place body-parser BEFORE your CRUD handlers
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(express.static('public'));
+    app.use(bodyParser.json());
     //All handlers here
     app.get('/', (request, response) => {
       db.collection('quotes')
@@ -29,7 +30,9 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
         })
         .catch((error) => console.error(error));
     });
-
+    app.put('/quotes', (req, res) => {
+      console.log(req.body);
+    });
     app.post('/quotes', (request, response) => {
       quotesCollection
         .insertOne(request.body)
