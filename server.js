@@ -63,7 +63,10 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true }).then(
       quotesCollection
         .deleteOne({ name: req.body.name })
         .then((result) => {
-          res.json(`Deleted Darth Vader's quote`);
+          if (result.deletedCount === 0) {
+            return res.json('Nothing else to delete');
+          }
+          res.json(`Deleted Test Name quote`);
         })
         .catch((error) => console.error(error));
     });
