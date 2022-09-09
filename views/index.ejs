@@ -5,15 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Testing Hello World</h1>
-    <form action="/quotes" method="POST">
-      <input type="text" placeholder="name" name="name" />
-      <input type="text" placeholder="quote" name="quote" />
-      <button type="submit">Submit</button>
-    </form>
-    <h2>Quotes</h2>
+    <h1 data-position="header">Testing Hello World</h1>
+    <section data-position="add-quote">
+      <h2>Add quotes</h2>
+      <form action="/quotes" method="POST">
+        <input type="text" placeholder="name" name="name" />
+        <input type="text" placeholder="quote" name="quote" />
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+    <section data-position="update-quote">
+      <div>
+        <h2>Replace Brian's quotes with Test Name</h2>
+        <button id="update-button">Update quote</button>
+      </div>
+    </section>
+    <section data-position="delete-quote">
+      <h2>Remove Test Name!</h2>
+      <p>Delete one of the Test Name</p>
+      <button id="delete-button">Delete Test Name</button>
+    </div>
+  </section>
+  <div>
+    <div id="message"></div>
+    <section data-position="quotes">
     <ul class="quotes">
       <% for(let i = 0; i< quotes.length; i++){ %>
       <li class="quotes">
@@ -22,17 +40,7 @@
       </li>
       <%} %>
     </ul>
-
-    <div>
-      <h2>Replace Brian's quotes with Test Name</h2>
-      <button id="update-button">Update quote</button>
-    </div>
-    <div>
-      <h2>Remove Test Name!</h2>
-      <p>Delete one of the Test Name</p>
-      <button id="delete-button">Delete Test Name</button>
-    </div>
-    <div id="message"></div>
+    </section>
     <script src="/main.js"></script>
   </body>
 </html>
